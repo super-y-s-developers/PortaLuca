@@ -25,8 +25,11 @@ export class WalletProvider {
   }
 
   public getBalance(UUID){
-    console.log("http://192.168.1.69:3000/v1/users/"+UUID+"/balance")
     return this.http.get(this.api_uri_base+"users/"+UUID+"/balance",{headers:this.headers}).toPromise();
+  }
+
+  public postUser(body){
+    return this.http.post(this.api_uri_base+"users/",body,{headers:this.headers}).toPromise();
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { WalletProvider } from '../../providers/wallet/wallet';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the RegisterPage page.
@@ -20,12 +22,11 @@ export class RegisterPage {
     password: "",
     cc: "",
     name: "",
-    phone:""
   }
-
+  phone = "";
   passwordConfirm ="";
 
-  constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public walletService: WalletProvider, public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   signUp(){
@@ -38,7 +39,20 @@ export class RegisterPage {
       })
       passwordMatchAlert.present();
     }else{
-      console.log("se ha registrado")
+      console.log("theuser")
+      this.walletService.postUser(this.userToRegister).then(res=>{
+        console.log(res)
+        let confirmAlert = this.alertCtrl.create({
+          title: 'Registro exitoso',
+          subTitle: 'Bienvenid@, por favor inicia sesión para empezar a usar PortaLuca',
+          buttons: [{text:'Aceptar',handler:()=>{this.navCtrl.setRoot(LoginPage)}}]
+        })
+        confirmAlert.present();
+      },(e)=>{
+        console.log(e)
+      }
+        
+      )
     }
   }
 

@@ -13,25 +13,28 @@
 <ion-content>
   <div padding>
     <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="id">
+        Mi Código
+      </ion-segment-button>
       <ion-segment-button value="get">
-        Recibir
+        Cobrar
       </ion-segment-button>
       <ion-segment-button value="send">
-        Enviar
+        Regalar
       </ion-segment-button>
     </ion-segment>
   </div>
   <div [ngSwitch]="type">
-    <span *ngSwitchCase="'get'">
-          <ion-row style="height: 60vh;margin:0;padding:0">
-              <ion-col style="width: 100vw;margin:0;padding:0">
-                  <ion-card style="height: 100%;width:100%;margin:0;box-shadow: none !important;">
-                      <button ion-fab Style="height: 70vw;width: 70vw;margin-left: 50%;margin-top:15px;transform: translate(-50%,0)"><ion-icon style="font-size:80pt" name="archive" (click)="gotoTransfer()"></ion-icon></button>
-                      <p style="margin-left: 50%;width:60%;transform: translate(-50%,0);text-align:center;font-size:1.5em">Cobrar o recibir</p>
-                    </ion-card>
-              </ion-col>
-          </ion-row>
-        </span>
+    <span *ngSwitchCase="'id'">
+        <ion-item>
+            <ion-label>Billetera</ion-label>
+            <ion-select [(ngModel)]="currentWallet">
+              <ion-option *ngFor="let wall of wallet;let i = index" [value]="wall">Billetera {{i}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <p style="margin-left: 50%;width:60%;transform: translate(-50%,0);text-align:center;font-size:2em;font-weight: 600">Mi codigo es: {{currentWallet}}</p>
+          <img style="margin-left:15vw;width:70vw;height: 70vw;" *ngIf="generated" [src]="generated" />
+    </span>
   </div>
       
 

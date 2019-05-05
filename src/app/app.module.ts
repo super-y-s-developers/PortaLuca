@@ -17,6 +17,9 @@ import { WalletProvider } from '../providers/wallet/wallet';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { AngularFireStorageModule} from 'angularfire2/storage'
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig.fire)
+    AngularFireModule.initializeApp(firebaseConfig.fire),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

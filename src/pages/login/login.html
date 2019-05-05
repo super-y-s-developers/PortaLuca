@@ -1,0 +1,46 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content>
+  <ion-card style="box-shadow: none !important;">
+    <ion-card-header style="height: 40vh;text-align: center;">
+      <ion-row style="height: 40vh;margin:0;padding:0">
+        <ion-col style="width: 100vw;margin:0;padding:0">
+            <ion-card style="height: 100%;width:100%;margin:0;box-shadow: none !important;">
+                <button ion-fab Style="height: 150px;width: 150px;margin-left: 50%;margin-top:15px;transform: translate(-50%,0)"><ion-icon style="font-size:60pt" name="cash" (click)="logout()"></ion-icon></button>
+                <p style="margin-left: 50%;width:60%;transform: translate(-50%,0);text-align:center;font-size:2em;font-weight: 600">PortaLuca</p>
+              </ion-card>
+        </ion-col>
+    </ion-row>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-list style="margin-left:10vw;width: 80vw">
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="user.id"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <ion-item>
+          <button ion-button style="width:100%;height: 8vh" [disabled]="user.id === '' || user.password === ''" (click)="login()">Iniciar sesión</button>
+      </ion-item>
+      <ion-item>
+          <button ion-button clear style="width:100%;height: 8vh" (click)="gotoRegister()">Registrarme</button>
+      </ion-item>
+
+
+    
+    </ion-list>
+
+
+
+</ion-content>

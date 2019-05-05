@@ -1,0 +1,61 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-content style="margin:0;padding:0">
+  <ion-row style="height: 30vh;margin:0;padding:0">
+    <ion-col style="width: 70vw;margin:0;padding:0;z-index:1000">
+        <ion-card style="height: 100%;width:100%;margin:0;box-shadow: none !important;">
+            <ion-card-header>   
+                <ion-card-title style="font-size: 16pt;text-align: center">Tu Dinero</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <p style="font-size: 20pt;text-align: center">{{money * 1000 | currency}}</p>
+                <p style="font-size: 20pt;text-align: center">{{money}}LUK</p>
+              </ion-card-content>
+          </ion-card>
+    </ion-col>
+    <ion-col style="width: 30vw;margin:0;padding:0">
+        <ion-card style="height: 100%;width:100%;margin:0;box-shadow: none !important;">
+            <ion-fab top right edge style="margin-top:40px">
+                <button ion-fab mini><ion-icon name="person"></ion-icon></button>
+                <ion-fab-list>
+                  <button ion-fab><ion-icon name="exit" (click)="logout()"></ion-icon></button>
+                </ion-fab-list>
+              </ion-fab>
+          </ion-card>    
+    </ion-col>
+  </ion-row>
+  <ion-row style="height: 40vh;margin:0;padding:0">
+      <ion-col style="width: 100vw;margin:0;padding:0">
+          <ion-card style="height: 100%;width:100%;margin:0;box-shadow: none !important;">
+              <button ion-fab Style="height: 150px;width: 150px;margin-left: 50%;margin-top:15px;transform: translate(-50%,0)"><ion-icon style="font-size:60pt" name="cash" (click)="gotoTransfer()"></ion-icon></button>
+              <p style="margin-left: 50%;width:60%;transform: translate(-50%,0);text-align:center;font-size:1.5em">Enviar o recibir dinero</p>
+            </ion-card>
+      </ion-col>
+  </ion-row>
+  <ion-row style="height: 30vh;margin:0;padding:0">
+      <ion-col style="width: 33.3vw;margin:0;padding:0">
+          <ion-card style="height: 100%;width:100%;margin:0;box-shadow: none !important;">
+              <button ion-fab Style="height: 90px;width: 90px;margin-left: 50%;margin-top:15px;transform: translate(-50%,0)"><ion-icon style="font-size:35pt" name="briefcase" (click)="logout()"></ion-icon></button>
+              <p style="margin-left: 50%;width:60%;transform: translate(-50%,0);text-align:center;font-size:1.1em">Mis Billeteras</p>
+            </ion-card>
+      </ion-col>
+      <ion-col style="width: 33.3vw;margin:0;padding:0">
+          <ion-card style="height: 100%;width:100%;margin:0;box-shadow: none !important;">
+              <button ion-fab Style="height: 90px;width: 90px;margin-left: 50%;margin-top:15px;transform: translate(-50%,0)"><ion-icon style="font-size:35pt" name="stats" (click)="logout()"></ion-icon></button>
+              <p style="margin-left: 50%;width:60%;transform: translate(-50%,0);text-align:center;font-size:1.1em">Estadísticas</p>
+            </ion-card>
+      </ion-col>
+      <ion-col style="width: 33.3vw;margin:0;padding:0">
+          <ion-card style="height: 100%;width:100%;margin:0;box-shadow: none !important;">
+              <button ion-fab Style="height: 90px;width: 90px;margin-left: 50%;margin-top:15px;transform: translate(-50%,0)"><ion-icon style="font-size:35pt" name="add" (click)="logout()"></ion-icon></button>
+              <p style="margin-left: 50%;width:60%;transform: translate(-50%,0);text-align:center;font-size:1.1em">Agregar dinero</p>
+            </ion-card>
+      </ion-col>
+  </ion-row>
+
+</ion-content>

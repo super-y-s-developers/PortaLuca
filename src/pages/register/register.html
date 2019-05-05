@@ -1,0 +1,58 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Registro</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header style="height: 40vh;text-align: center;">
+        <ion-card-title style="width: 100%;font-size: 30pt">
+            <ion-icon name="cash"></ion-icon>
+        </ion-card-title>     
+        <p style="font-size: 25pt">Ingresa tus datos</p>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-list style="margin-left:10vw;width: 80vw">
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="userToRegister.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="userToRegister.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Teléfono</ion-label>
+        <ion-input type="text" [(ngModel)]="userToRegister.phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Documento de identidad</ion-label>
+        <ion-input type="text" [(ngModel)]="userToRegister.cc"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating style="margin-top: 25px">Nueva Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="userToRegister.password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Confirmar Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="passwordConfirm"></ion-input>
+      </ion-item>
+      <ion-item>
+          <button ion-button style="width:100%;height: 8vh" [disabled]="passwordConfirm === ''|| userToRegister.password === '' || userToRegister.email === '' || userToRegister.name === '' || userToRegister.phone === ''||userToRegister.cc=== ''" (click)="signUp()">Registrarme</button>
+      </ion-item>
+
+
+    
+    </ion-list>
+
+</ion-content>

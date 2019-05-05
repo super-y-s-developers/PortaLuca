@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { QrReaderPage } from '../pages/qr-reader/qr-reader';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { StaticsPage } from '../pages/statics/statics';
@@ -19,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { AngularFireStorageModule} from 'angularfire2/storage'
+import { QRScanner } from '@ionic-native/qr-scanner';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { AngularFireStorageModule} from 'angularfire2/storage'
     LoginPage,
     RegisterPage,
     StaticsPage,
-    TransferPage
+    TransferPage,
+    QrReaderPage
   ],
   imports: [
     BrowserModule,
@@ -46,14 +49,16 @@ import { AngularFireStorageModule} from 'angularfire2/storage'
     LoginPage,
     RegisterPage,
     StaticsPage,
-    TransferPage
+    TransferPage,
+    QrReaderPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AngularFireAuth,
-    WalletProvider
+    WalletProvider,
+    QRScanner
   ]
 })
 export class AppModule {}

@@ -35,6 +35,15 @@
           <p style="margin-left: 50%;width:60%;transform: translate(-50%,0);text-align:center;font-size:2em;font-weight: 600">Mi codigo es: {{currentWallet}}</p>
           <img style="margin-left:15vw;width:70vw;height: 70vw;" *ngIf="generated" [src]="generated" />
     </span>
+    <span *ngSwitchCase="'get'">
+        <ion-row style="height: 40vh;margin:0;padding:0">
+            <ion-col style="width: 100vw;margin:0;padding:0">
+                <ion-card style="height: 100%;width:100%;margin:0;box-shadow: none !important;">
+                    <button ion-fab Style="height: 150px;width: 150px;margin-left: 50%;margin-top:15px;transform: translate(-50%,0)"><ion-icon style="font-size:60pt" name="camera" (click)="gotoQrPage()"></ion-icon></button>
+                  </ion-card>
+            </ion-col>
+        </ion-row>
+    </span>
   </div>
       
 

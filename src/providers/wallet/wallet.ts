@@ -32,4 +32,8 @@ export class WalletProvider {
     return this.http.post(this.api_uri_base+"users/",body,{headers:this.headers}).toPromise();
   }
 
+  public postTransactionAsk(body){
+    return this.http.post(this.api_uri_base+"transaction/answer",body,{headers:this.headers}).toPromise();
+  }
+
 }

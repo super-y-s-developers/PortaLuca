@@ -4,6 +4,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { WalletProvider } from '../../providers/wallet/wallet';
 import { AngularFireAuth } from 'angularfire2/auth';
 import QRCode from 'qrcode';
+import { QrReaderPage } from '../qr-reader/qr-reader';
 
 /**
  * Generated class for the TransferPage page.
@@ -41,6 +42,10 @@ export class TransferPage {
       })
       alert.present();
     }
+  }
+
+  gotoQrPage(){
+    this.navCtrl.push(QrReaderPage)
   }
   ionViewDidLoad() {
     this.notifications = {}
